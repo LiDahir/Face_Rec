@@ -8,6 +8,8 @@ class Data:
         """Initialize the connection to the SQLite database."""
         self.db_file = "just.db"
         self.conn = self.create_connection()
+        self.create_user()
+        print("Maxaa la abuuray")
 
     def create_connection(self):
         """Create a database connection to the SQLite database."""
@@ -63,7 +65,7 @@ class Data:
         try:
             c = self.conn.cursor()
             c.execute(create_table_sql)
-            c.execute("insert into Users (User,Gmail,user_type,Pass) (administrator,administrator@gmail.com,admin,1234)")
+            c.execute("INSERT INTO Users (User, user_type,Gmail, Pass) VALUES ('administrator','admin', 'administrator@gmail.com',  1234)")
             print("Table Users created or already exists.")
         except Error as e:
             return e

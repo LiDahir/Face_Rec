@@ -1,3 +1,0 @@
-opencv-python
-django
-face-recognition
